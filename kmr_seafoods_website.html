@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="KMR Sea Foods (Export) — seafood sourcing, processing and export enquiries.">
+  <title>KMR Sea Foods (Export) | From Our Waters to the World</title>
+  <style>
+    :root{--navy:#062b3b;--blue:#087e9b;--aqua:#18b6b0;--ink:#17313c;--muted:#607781;--light:#f2f8f9;--white:#fff;--gold:#f3b84b}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:Arial,Helvetica,sans-serif;color:var(--ink);line-height:1.6;background:#fff}
+    a{color:inherit;text-decoration:none}
+    .container{width:min(1120px,92%);margin:auto}
+    header{background:rgba(4,35,49,.97);color:#fff;position:sticky;top:0;z-index:10;box-shadow:0 3px 18px #00192325}
+    .nav{min-height:74px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.4px}
+    .brand-mark{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:var(--aqua);font-size:22px}
+    .brand small{display:block;font-size:10px;letter-spacing:2px;color:#b7d9df;font-weight:600}
+    nav{display:flex;gap:25px;align-items:center;font-size:14px}
+    nav a:hover{color:#62e1d8}
+    .nav-cta,.btn{display:inline-block;background:var(--aqua);color:#032d3a;padding:12px 20px;border-radius:5px;font-weight:800;border:0;cursor:pointer}
+    .hero{color:white;min-height:590px;display:flex;align-items:center;background:linear-gradient(90deg,rgba(2,29,43,.94),rgba(3,49,64,.72),rgba(3,49,64,.25)),url('https://images.unsplash.com/photo-1510130387422-82bed34b37e9?auto=format&fit=crop&w=1800&q=85') center/cover}
+    .hero-content{max-width:700px;padding:95px 0}
+    .eyebrow{color:#72e2d9;text-transform:uppercase;letter-spacing:3px;font-size:12px;font-weight:800}
+    h1{font-size:clamp(40px,6vw,68px);line-height:1.08;margin:18px 0}
+    .hero p{font-size:18px;color:#e0eef1;max-width:590px;margin-bottom:30px}
+    .btn-outline{display:inline-block;border:1px solid #d6edf0;color:white;padding:11px 20px;border-radius:5px;margin-left:10px;font-weight:700}
+    section{padding:78px 0}
+    .section-head{text-align:center;max-width:690px;margin:0 auto 42px}
+    .section-head .eyebrow{color:var(--blue)}
+    h2{font-size:clamp(28px,4vw,40px);line-height:1.2;color:var(--navy);margin:10px 0 14px}
+    .section-head p,.muted{color:var(--muted)}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+    .about-photo{min-height:390px;border-radius:12px;background:url('https://images.unsplash.com/photo-1510130387422-82bed34b37e9?auto=format&fit=crop&w=1000&q=85') center/cover;box-shadow:18px 18px 0 #dff4f2}
+    .about-copy h2{margin-top:8px}
+    .ticks{list-style:none;margin:22px 0;display:grid;gap:12px}
+    .ticks li:before{content:'✓';color:var(--blue);font-weight:900;margin-right:10px}
+    .products{background:var(--light)}
+    .product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .product-card{background:white;border-radius:10px;overflow:hidden;box-shadow:0 8px 25px #062b3b0d;transition:transform .2s}
+    .product-card:hover{transform:translateY(-5px)}
+    .product-img{height:190px;background-size:cover;background-position:center}
+    .p1{background-image:url('https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?auto=format&fit=crop&w=800&q=80')}
+    .p2{background-image:url('https://images.unsplash.com/photo-1599084993091-1cb5c0721cc6?auto=format&fit=crop&w=800&q=80')}
+    .p3{background-image:url('https://images.unsplash.com/photo-1559737558-2f5a35f4523b?auto=format&fit=crop&w=800&q=80')}
+    .p4{background-image:url('https://images.unsplash.com/photo-1559737558-2f5a35f4523b?auto=format&fit=crop&w=800&q=80')}
+    .p5{background-image:url('https://images.unsplash.com/photo-1510130387422-82bed34b37e9?auto=format&fit=crop&w=800&q=80')}
+    .p6{background-image:url('https://images.unsplash.com/photo-1559737558-2f5a35f4523b?auto=format&fit=crop&w=800&q=80')}
+    .product-info{padding:20px}.product-info h3{color:var(--navy);margin-bottom:6px}.product-info p{font-size:14px;color:var(--muted)}
+    .features{background:var(--navy);color:white}
+    .features .section-head h2{color:white}.features .section-head p{color:#c2d9df}.features .eyebrow{color:#72e2d9}
+    .feature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .feature{padding:24px 18px;border:1px solid #ffffff25;border-radius:9px;text-align:center}
+    .feature .icon{font-size:30px;margin-bottom:12px}.feature h3{font-size:17px;margin-bottom:8px}.feature p{font-size:13px;color:#c2d9df}
+    .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:step}
+    .process{padding:22px;border-left:3px solid var(--aqua);background:var(--light)}
+    .process:before{counter-increment:step;content:'0' counter(step);font-size:24px;font-weight:900;color:var(--blue)}
+    .process h3{margin:8px 0;color:var(--navy)}.process p{font-size:14px;color:var(--muted)}
+    .contact{background:var(--light)}
+    .contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:start}
+    .contact-panel{background:var(--navy);color:white;padding:30px;border-radius:10px}
+    .contact-panel h2{color:white}.contact-panel p{color:#c8dce1;margin:12px 0 22px}
+    .contact-item{padding:12px 0;border-top:1px solid #ffffff25}.contact-item strong{display:block;color:#71e1d8;font-size:12px;text-transform:uppercase;letter-spacing:1px}
+    form{background:white;padding:30px;border-radius:10px;box-shadow:0 8px 25px #062b3b0d}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+    label{display:block;font-size:13px;font-weight:700;margin:0 0 6px;color:var(--navy)}
+    input,select,textarea{width:100%;padding:12px;border:1px solid #d5e2e5;border-radius:5px;margin-bottom:16px;font:inherit;color:var(--ink)}
+    textarea{min-height:115px;resize:vertical}
+    footer{background:#031f2b;color:#b9cdd2;padding:25px 0;font-size:13px}
+    .footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    .notice{font-size:12px;color:#71878e;margin-top:18px}
+    @media(max-width:800px){nav{gap:12px;font-size:12px}.nav-cta{display:none}.about-grid,.contact-grid{grid-template-columns:1fr}.product-grid{grid-template-columns:repeat(2,1fr)}.feature-grid,.process-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:560px){.nav{padding:12px 0;align-items:flex-start}.brand{font-size:13px}.brand-mark{width:36px;height:36px}nav{display:grid;grid-template-columns:repeat(3,auto);gap:7px 13px;margin-top:8px}.hero{min-height:520px}.hero-content{padding:70px 0}.btn-outline{margin:12px 0 0}.product-grid,.feature-grid,.process-grid,.form-row{grid-template-columns:1fr}.about-photo{min-height:260px}section{padding:58px 0}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="brand" href="#home"><span class="brand-mark">〰</span><span>KMR SEA FOODS<small>EXPORTS</small></span></a>
+    <nav aria-label="Main navigation"><a href="#home">Home</a><a href="#about">About</a><a href="#products">Products</a><a href="#quality">Our Standards</a><a href="#contact">Contact</a></nav>
+    <a class="nav-cta" href="#contact">Enquire Now</a>
+  </div>
+</header>
+<main>
+  <section class="hero" id="home"><div class="container"><div class="hero-content">
+    <div class="eyebrow">KMR Sea Foods (Export)</div>
+    <h1>From Our Waters<br>to the World.</h1>
+    <p>Your seafood export partner. Explore our range of seafood products and contact our team for product details, specifications and export enquiries.</p>
+    <a class="btn" href="#products">Explore Products</a><a class="btn-outline" href="#contact">Contact Our Team</a>
+  </div></div></section>
+
+  <section id="about"><div class="container about-grid"><div class="about-photo" role="img" aria-label="Fresh seafood"></div><div class="about-copy">
+    <div class="eyebrow">About KMR</div><h2>Connecting seafood to global markets</h2>
+    <p class="muted">KMR Sea Foods (Export) is presented here as a seafood export business. We aim to make it easy for buyers to explore product categories and contact our team for sourcing and export enquiries.</p>
+    <ul class="ticks"><li>Seafood product range for buyer enquiries</li><li>Product specifications shared on request</li><li>Order and shipment discussions with our team</li><li>Buyer-focused communication</li></ul>
+    <a class="btn" href="#contact">Talk to KMR</a>
+  </div></div></section>
+
+  <section class="products" id="products"><div class="container"><div class="section-head"><div class="eyebrow">Our Product Range</div><h2>Seafood Selection</h2><p>Example product categories for the website. Update this list to match the products KMR Sea Foods actually supplies and exports.</p></div>
+    <div class="product-grid">
+      <article class="product-card"><div class="product-img p1"></div><div class="product-info"><h3>Shrimp & Prawns</h3><p>Available sizes, varieties and processing formats can be shared on enquiry.</p></div></article>
+      <article class="product-card"><div class="product-img p2"></div><div class="product-info"><h3>Squid</h3><p>Ask our team about product form, grading and packing specifications.</p></div></article>
+      <article class="product-card"><div class="product-img p3"></div><div class="product-info"><h3>Cuttlefish</h3><p>Contact us for current availability and buyer requirements.</p></div></article>
+      <article class="product-card"><div class="product-img p4"></div><div class="product-info"><h3>Crab</h3><p>Share your preferred product type and specifications with our team.</p></div></article>
+      <article class="product-card"><div class="product-img p5"></div><div class="product-info"><h3>Marine Fish</h3><p>Product options and seasonal availability can be confirmed on request.</p></div></article>
+      <article class="product-card"><div class="product-img p6"></div><div class="product-info"><h3>Other Seafood</h3><p>Tell us what you are looking for and we can discuss your enquiry.</p></div></article>
+    </div>
+  </div></section>
+
+  <section class="features" id="quality"><div class="container"><div class="section-head"><div class="eyebrow">Our Standards</div><h2>Focused on buyer requirements</h2><p>Use this section to describe the real quality systems, facilities and certifications held by your business.</p></div>
+    <div class="feature-grid"><div class="feature"><div class="icon">❄️</div><h3>Cold-Chain Handling</h3><p>Add details of your actual temperature-control process.</p></div><div class="feature"><div class="icon">🔍</div><h3>Product Inspection</h3><p>Describe your real inspection and grading procedures.</p></div><div class="feature"><div class="icon">📦</div><h3>Export Packaging</h3><p>List the packaging formats you can genuinely provide.</p></div><div class="feature"><div class="icon">🌍</div><h3>Export Enquiries</h3><p>Discuss destination-market and buyer requirements with us.</p></div></div>
+  </div></section>
+
+  <section><div class="container"><div class="section-head"><div class="eyebrow">How We Work</div><h2>A simple enquiry process</h2><p>Clear communication from the first product enquiry to order discussion.</p></div>
+    <div class="process-grid"><div class="process"><h3>Send Enquiry</h3><p>Tell us the product, quantity and destination market you are interested in.</p></div><div class="process"><h3>Confirm Details</h3><p>Discuss availability, specifications, packing and other requirements.</p></div><div class="process"><h3>Review Quotation</h3><p>Our team can share pricing and order details after confirmation.</p></div><div class="process"><h3>Coordinate Order</h3><p>Agree on the order and shipment arrangements directly with our team.</p></div></div>
+  </div></section>
+
+  <section class="contact" id="contact"><div class="container"><div class="section-head"><div class="eyebrow">Get in Touch</div><h2>Let's discuss your seafood requirements</h2><p>Send us your product enquiry. Replace the sample contact information below with the company's official details.</p></div>
+    <div class="contact-grid"><div class="contact-panel"><h2>KMR Sea Foods (Export)</h2><p>For product availability, specifications, quotations and export enquiries, contact our team.</p>
+      <div class="contact-item"><strong>Phone / WhatsApp</strong>[Add official phone number]</div>
+      <div class="contact-item"><strong>Email</strong>[Add official business email]</div>
+      <div class="contact-item"><strong>Business Address</strong>[Add registered / business address]</div>
+      <div class="contact-item"><strong>Business Hours</strong>[Add working days and hours]</div>
+    </div>
+    <form id="enquiryForm">
+      <div class="form-row"><div><label for="name">Your Name *</label><input id="name" name="name" required placeholder="Enter your name"></div><div><label for="company">Company Name</label><input id="company" name="company" placeholder="Your company"></div></div>
+      <div class="form-row"><div><label for="email">Email Address *</label><input id="email" name="email" type="email" required placeholder="name@company.com"></div><div><label for="country">Country</label><input id="country" name="country" placeholder="Your country"></div></div>
+      <label for="product">Product Interested In</label><select id="product" name="product"><option value="">Select a product</option><option>Shrimp & Prawns</option><option>Squid</option><option>Cuttlefish</option><option>Crab</option><option>Marine Fish</option><option>Other</option></select>
+      <label for="message">Your Requirement *</label><textarea id="message" name="message" required placeholder="Product, quantity, specifications and destination market..."></textarea>
+      <button class="btn" type="submit">Send Enquiry</button>
+      <p class="notice">Demo form: configure the company email address or connect a form service before publishing. No information is stored by this sample page.</p>
+    </form></div>
+  </div></section>
+</main>
+<footer><div class="container footer-inner"><span>© <span id="year"></span> KMR Sea Foods (Export). All rights reserved.</span><span>Seafood Export | Buyer Enquiries</span></div></footer>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  document.getElementById('enquiryForm').addEventListener('submit', function(event){
+    event.preventDefault();
+    const data = new FormData(this);
+    const email = 'YOUR-EMAIL@example.com'; // Replace with KMR's official email address.
+    const subject = encodeURIComponent('Seafood Export Enquiry - ' + (data.get('name') || 'Website visitor'));
+    const body = encodeURIComponent(
+      'Name: ' + data.get('name') + '\nCompany: ' + data.get('company') + '\nEmail: ' + data.get('email') +
+      '\nCountry: ' + data.get('country') + '\nProduct: ' + data.get('product') + '\nRequirement: ' + data.get('message')
+    );
+    window.location.href = 'mailto:' + email + '?subject=' + subject + '&body=' + body;
+  });
+</script>
+</body>
+</html>
